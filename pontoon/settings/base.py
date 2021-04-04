@@ -557,7 +557,7 @@ STATICFILES_DIRS = [
 #    return result
 
 #ALLOWED_HOSTS = lazy(_allowed_hosts, list)()
-ALLOWED_HOSTS= ["translate.readingsnail.pe.kr", "readingsnail.pe.kr", "translates.herokuapp.com"]
+ALLOWED_HOSTS= ['translate.readingsnail.pe.kr', 'readingsnail.pe.kr', 'translates.herokuapp.com']
 
 # Auth
 # The first hasher in this list will be used for new passwords.
