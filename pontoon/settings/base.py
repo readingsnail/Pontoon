@@ -556,8 +556,8 @@ def _allowed_hosts():
     return result
 
 
-ALLOWED_HOSTS = lazy(_allowed_hosts, list)()
-
+#ALLOWED_HOSTS = lazy(_allowed_hosts, list)()
+ALLOWED_HOSTS = [translate.readingsnail.pe.kr,translates.herokuapp.com,readingsnail.pe.kr]
 # Auth
 # The first hasher in this list will be used for new passwords.
 # Any other hasher in the list can be used for existing passwords.
