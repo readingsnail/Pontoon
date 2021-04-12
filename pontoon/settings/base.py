@@ -747,7 +747,7 @@ try:
 except ValueError:
     SYNC_TASK_TIMEOUT = 60 * 60 * 1  # 1 hour
 
-SYNC_LOG_RETENTION = 5  # days
+SYNC_LOG_RETENTION = 3  # days
 
 MANUAL_SYNC = os.environ.get("MANUAL_SYNC", "True") != "False"
 
