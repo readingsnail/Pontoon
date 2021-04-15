@@ -848,3 +848,12 @@ NOTIFICATIONS_MAX_COUNT = 7
 
 # Number of events displayed on the Contributor's timeline per page.
 CONTRIBUTORS_TIMELINE_EVENTS_PER_PAGE = 10
+
+
+CELERY_BEAT_SCHEDULE = {
+    'perodic-sync': {
+        'task': './manage.py sync_projects',
+        'schedule': crontab(minute=7/*, hour='*,*,*,*')
+    }
+}
+
