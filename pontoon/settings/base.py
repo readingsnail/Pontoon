@@ -170,7 +170,7 @@ INSTALLED_APPS = (
     "notifications",
     "graphene_django",
     "webpack_loader",
-    "django_ace"
+    "django_ace",
     "django_celery_beat",
 )
 
