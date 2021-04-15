@@ -117,9 +117,6 @@ django-allauth==0.44.0 \
 django-bmemcached==0.2.3 \
     --hash=sha256:c9e4f5ca17417a26354e7d6a8899e44e34d541e8731ea0d987f2bf5a04df351a
     # via -r requirements/default.in
-django-celery-beat==2.2.0 \
-    --hash=sha256:c4c72a9579f20eff4c4ccf1b58ebdca5ef940f4210065057db1754ea5f8dffdc \
-    --hash=sha256:b8a13afb15e7c53fc04f4f847ac71a6d32088959aba701eb7c4a59f0c28ba543s
 django-cors-headers==3.5.0 \
     --hash=sha256:9322255c296d5f75089571f29e520c83ff9693df17aa3cf9f6a4bea7c6740169 \
     --hash=sha256:db82b2840f667d47872ae3e4a4e0a0d72fbecb42779b8aa233fa8bb965f7836a
@@ -171,9 +168,6 @@ django==3.1.8 \
     #   django-notifications-hq
     #   graphene-django
     #   jsonfield
-django-timezone-field==4.1.2 \
-    --hash=sha256:897c06e40b619cf5731a30d6c156886a7c64cba3a90364832148da7ef32ccf36 \
-    --hash=sha256:cffac62452d060e365938aa9c9f7b72d70d8b26b9c60243bce227b35abd1b9df
 fluent.syntax==0.18.1 \
     --hash=sha256:0e63679fa4f1b3042565220a5127b4bab842424f07d6a13c12299e3b3835486a \
     --hash=sha256:3a55f5e605d1b029a65cc8b6492c86ec4608e15447e73db1495de11fd46c104f
@@ -371,8 +365,6 @@ pyparsing==2.4.7 \
 python-binary-memcached==0.30.1 \
     --hash=sha256:f91c3d79d022121c22ef733e9beee86e0598e29ffec67401c68cece1ba7f036a
     # via django-bmemcached
-python-crontab==2.5.1 \
-    --hash=sha256:4bbe7e720753a132ca4ca9d4094915f40e9d9dc8a807a4564007651018ce8c31
 python-dateutil==2.8.1 \
     --hash=sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c \
     --hash=sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a
