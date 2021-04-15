@@ -323,7 +323,7 @@ mercurial==5.2.2 \
     --hash=sha256:4c5ea34e2eba25b5d1b5712f1c72df0a64ec47ce206c1279419c87a26fca033b \
     --hash=sha256:ffc5ff47488c7b5dae6ead3d99f08ef469500d6567592a25311838320106c03b
     # via -r requirements/default.in
-newrelic==6.2.5.156 \
+newrelic==6.2.0.156 \
     --hash=sha256:3dec4647de67609570c4e305f2b6432a00e0a0940a7ac69660ee92268b49d6e7
     # via -r requirements/default.in
 oauthlib==3.1.0 \
