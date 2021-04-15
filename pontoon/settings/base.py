@@ -745,7 +745,7 @@ ALLOWED_ATTRIBUTES = {
 try:
     SYNC_TASK_TIMEOUT = int(os.environ.get("SYNC_TASK_TIMEOUT", ""))
 except ValueError:
-    SYNC_TASK_TIMEOUT = 60 * 60 * 1  # 1 hour
+    SYNC_TASK_TIMEOUT = 60 * 30 * 1  # 1 hour
 
 SYNC_LOG_RETENTION = 3  # days
 
