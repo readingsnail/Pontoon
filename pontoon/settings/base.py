@@ -853,7 +853,7 @@ CONTRIBUTORS_TIMELINE_EVENTS_PER_PAGE = 10
 CELERY_BEAT_SCHEDULE = {
     'perodic-sync': {
         'task': './manage.py sync_projects',
-        'schedule': crontab(minute=7/*, hour='*,*,*,*')
+        'schedule': crontab(minute='*/7')
     }
 }
 
