@@ -117,6 +117,9 @@ django-allauth==0.44.0 \
 django-bmemcached==0.2.3 \
     --hash=sha256:c9e4f5ca17417a26354e7d6a8899e44e34d541e8731ea0d987f2bf5a04df351a
     # via -r requirements/default.in
+django-celery-beat==2.2.0 \
+    --hash=sha256:c4c72a9579f20eff4c4ccf1b58ebdca5ef940f4210065057db1754ea5f8dffdc \
+    --hash=sha256:b8a13afb15e7c53fc04f4f847ac71a6d32088959aba701eb7c4a59f0c28ba543s
 django-cors-headers==3.5.0 \
     --hash=sha256:9322255c296d5f75089571f29e520c83ff9693df17aa3cf9f6a4bea7c6740169 \
     --hash=sha256:db82b2840f667d47872ae3e4a4e0a0d72fbecb42779b8aa233fa8bb965f7836a
