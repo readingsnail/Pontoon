@@ -357,7 +357,7 @@ promise==2.3 \
     #   graphene-django
     #   graphql-core
     #   graphql-relay
-psycopg2==2.8.5 \
+psycopg2==2.8.6 \
     --hash=sha256:fb23f6c71107c37fd667cb4ea363ddeb936b348bbd6449278eb92c189699f543
     # via -r requirements/default.in
 pycparser==2.20 \
@@ -501,8 +501,8 @@ tqdm==4.60.0 \
     --hash=sha256:daec693491c52e9498632dfbe9ccfc4882a557f5fa08982db1b4d3adbe0887c3 \
     --hash=sha256:ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae
     # via sacremoses
-translate-toolkit==3.3.2 \
-    --hash=sha256:0795bd3c8668213199550ae4ed8938874083139ec1f8c473dcca1524a206b108
+translate-toolkit==3.3.6 \
+    --hash=sha256:abc6815ac563a013ba5dcbc245bddb6b2000f8de112999a85ed087a989de1860
     # via -r requirements/default.in
 uhashring==2.0 \
     --hash=sha256:c44c53e88ab01222d3a14346af6aac72a5b3b8ea1a1ddc8d102d0c893bf3e249
