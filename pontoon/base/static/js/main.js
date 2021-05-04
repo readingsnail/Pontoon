@@ -66,6 +66,26 @@ var Pontoon = (function (my) {
         },
 
         /*
+         * Log UX action
+         */
+        logUxAction: function (action_type, experiment, data) {
+            this.NProgressUnbind();
+
+            $.ajax({
+                url: '/log-ux-action/',
+                type: 'POST',
+                data: {
+                    csrfmiddlewaretoken: $('body').data('csrf'),
+                    action_type,
+                    experiment,
+                    data: JSON.stringify(data),
+                },
+            });
+
+            this.NProgressBind();
+        },
+
+        /*
          * Close notification
          */
         closeNotification: function () {
@@ -143,7 +163,87 @@ $(function () {
         ga('send', 'event', 'ajax', 'request', settings.url);
     });
 
+    /*
+     * Display Pontoon Add-On Promotion, if:
+     *
+     * - Promotion not dismissed
+     * - Add-On not installed
+     * - Page loaded on Firefox or Chrome (add-on not available for other browsers)
+     */
+    setTimeout(function () {
+        var dismissed = !$('#addon-promotion').length;
+        var installed = window.PontoonAddon && window.PontoonAddon.installed;
+        if (!dismissed && !installed) {
+            var isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
+            var isChrome = navigator.userAgent.indexOf('Chrome') !== -1;
+            var downloadHref = '';
+            if (isFirefox) {
+                downloadHref =
+                    'https://addons.mozilla.org/firefox/addon/pontoon-tools/';
+            }
+            if (isChrome) {
+                downloadHref =
+                    'https://chrome.google.com/webstore/detail/pontoon-add-on/gnbfbnpjncpghhjmmhklfhcglbopagbb';
+            }
+            if (downloadHref) {
+                $('#addon-promotion').find('.get').attr('href', downloadHref);
+                $('body').addClass('addon-promotion-active');
+            }
+        }
+        // window.PontoonAddon is made available by the Pontoon Add-On,
+        // but not immediatelly after the DOM is ready
+    }, 1000);
+
+    // Dismiss Add-On Promotion
+    $('#addon-promotion .dismiss').click(function () {
+        Pontoon.NProgressUnbind();
+
+        $.ajax({
+            url: '/dismiss-addon-promotion/',
+            success: function () {
+                $('body').removeClass('addon-promotion-active');
+            },
+        });
+
+        Pontoon.NProgressBind();
+    });
+
+    // Hide Add-On Promotion if Add-On installed while active
+    window.addEventListener('message', (e) => {
+        const data = JSON.parse(e.data);
+        if (data._type === 'PontoonAddonInfo') {
+            if (data.value.installed) {
+                $('body').removeClass('addon-promotion-active');
+            }
+        }
+    });
+
     Pontoon.NProgressBind();
+
+    var unreadNotificationsExist = $('#notifications').is('.unread');
+
+    // Log display of the unread notification icon
+    if (unreadNotificationsExist) {
+        Pontoon.logUxAction(
+            'Render: Unread notifications icon',
+            'Notifications 1.0',
+            {
+                pathname: window.location.pathname,
+            },
+        );
+    }
+
+    // Log clicks on the notifications icon
+    $('#notifications .button').click(function () {
+        if ($('#notifications').is('.opened')) {
+            return;
+        }
+
+        Pontoon.logUxAction('Click: Notifications icon', 'Notifications 1.0', {
+            pathname: window.location.pathname,
+            unread: unreadNotificationsExist,
+        });
+    });
 
     // Display any notifications
     var notifications = $('.notification li');
@@ -157,7 +257,7 @@ $(function () {
     });
 
     // Mark notifications as read when notification menu opens
-    $('#notifications.unread .button .icon').click(function () {
+    $('#notifications.unread .button').click(function () {
         Pontoon.markAllNotificationsAsRead();
     });
 
