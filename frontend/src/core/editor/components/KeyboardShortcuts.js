@@ -14,7 +14,7 @@ type State = {|
 |};
 
 type KeyboardShortcutsProps = {
-    onDiscard: (e: SyntheticEvent<any>) => void,
+    onDiscard: (e: MouseEvent) => void,
 };
 
 function KeyboardShortcuts({ onDiscard }: KeyboardShortcutsProps) {
@@ -224,8 +224,8 @@ export default class KeyboardShortcutsBase extends React.Component<
     Props,
     State,
 > {
-    constructor() {
-        super();
+    constructor(props: Props) {
+        super(props);
         this.state = {
             visible: false,
         };
