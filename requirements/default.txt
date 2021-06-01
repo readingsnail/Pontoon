@@ -194,6 +194,8 @@ graphql-relay==2.0.1 \
 gunicorn==20.1.0 \
     --hash=sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8 \
     # via -r requirements/default.in
+honcho=1.0.1 \
+    --hash=sha256:af5806bf13e3b20acdcb9ff8c0beb91eee6fe07393c3448dfad89667e6ac7576 \
 idna==2.10 \
     --hash=sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6 \
     --hash=sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0
