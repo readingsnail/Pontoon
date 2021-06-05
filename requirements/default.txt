@@ -165,8 +165,8 @@ django-webpack-loader==0.5.0 \
     --hash=sha256:7094bcd8cc40c9824e5b482ce8ff9e8ae09e1982e5d08e078e5fe2411fb40a03
     # via -r requirements/default.in
 django==3.2.1 \
-    --hash=sha256:e2f73790c60188d3f94f08f644de249d956b3789161e7604509d128a13fb2fcc \
-    --hash=sha256:95c13c750f1f214abadec92b82c2768a5e795e6c2ebd0b4126f895ce9efffcdd
+    --hash=sha256:95c13c750f1f214abadec92b82c2768a5e795e6c2ebd0b4126f895ce9efffcdd \
+    --hash=sha256:e2f73790c60188d3f94f08f644de249d956b3789161e7604509d128a13fb2fcc
     # via
     #   -r requirements/default.in
     #   django-ace
