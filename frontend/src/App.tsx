@@ -31,6 +31,7 @@ import type { LocaleState } from 'core/locale';
 import type { NavigationParams } from 'core/navigation';
 import type { ProjectState } from 'core/project';
 import type { Stats } from 'core/stats';
+import { AppState } from 'rootReducer';
 
 type Props = {
     batchactions: BatchActionsState;
@@ -136,7 +137,7 @@ class App extends React.Component<InternalProps> {
     }
 }
 
-const mapStateToProps = (state: Record<string, any>): Props => {
+const mapStateToProps = (state: AppState): Props => {
     return {
         batchactions: state[batchactions.NAME],
         l10n: state[l10n.NAME],
@@ -148,4 +149,4 @@ const mapStateToProps = (state: Record<string, any>): Props => {
     };
 };
 
-export default connect(mapStateToProps)(App) as any;
+export default connect(mapStateToProps)(App);
