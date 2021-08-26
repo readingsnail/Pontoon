@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 
@@ -21,14 +20,6 @@ import * as otherlocales from 'modules/otherlocales';
 import * as search from 'modules/search';
 import * as teamcomments from 'modules/teamcomments';
 import * as unsavedchanges from 'modules/unsavedchanges';
-
-type BaseReducerMap<S> = {
-    [K in keyof S]: (state: S[K], action: any) => S;
-};
-
-export type InferRootState<ReducerMap extends BaseReducerMap<S>, S = any> = {
-    [K in keyof ReducerMap]: ReturnType<ReducerMap[K]>;
-};
 
 // Combine reducers from all modules, using their NAME constant as key.
 const reducers = {
@@ -55,13 +46,10 @@ const reducers = {
     [unsavedchanges.NAME]: unsavedchanges.reducer,
 };
 
-const combinedReducers = (browserHistory: History) =>
-    combineReducers({
-        // System modules
-        router: connectRouter(browserHistory),
-        ...reducers,
-    });
-
-export type AppState = InferRootState<typeof reducers>;
+const combinedReducers = (browserHistory: History) => ({
+    // System modules
+    router: connectRouter(browserHistory),
+    ...reducers,
+});
 
 export default combinedReducers;
