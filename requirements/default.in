@@ -17,7 +17,7 @@
 bleach==3.3.0
 celery==4.3.0
 compare-locales==8.1.0
-dj-database-url==0.5.0
+dj-database-url==0.3.0
 Django==3.2.4
 django-ace==1.0.5
 django-allauth==0.44.0
@@ -40,14 +40,14 @@ mercurial==5.2.2
 newrelic==6.2.0.156
 parsimonious==0.6.2
 polib==1.0.6
-psycopg2==2.8.6
+psycopg2==2.8.5
 python-dateutil==2.8.1
 python-dotenv==0.17.0
 python-levenshtein==0.12.2
 pytz==2019.3
 raygun4py==4.3.0
 sacremoses==0.0.43
-translate-toolkit==3.3.6
+translate-toolkit==3.3.2
 whitenoise==5.2.0
 wsgi-sslify==1.0.1
 
